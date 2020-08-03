@@ -1,3 +1,4 @@
+const geocode = require('./utils/geocode');
 const express = require('express'),
     app = express();
 
@@ -6,10 +7,14 @@ app.get('/weather', (req, res) => {
 
     if (!address) return res.send({ 'error': 'You must provide an address' });
 
-    res.send({
-        'forecast': 'Its is snowing',
-        'location': 'Philadelphia',
-        'addres': `${address}`,
+    geocode(address, (err, { location, current }) => {
+        if (err) return res.send({ 'error': `${err}` });
+
+        res.send({
+            'forecast': current.weather_descriptions.join(', '),
+            'location': location.name,
+            'address': location.region,
+        });
     });
 });
 
