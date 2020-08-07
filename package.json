@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint:fix": "npx eslint ./ -f table --ext .js",
-    "start": "node src/app.js"
+    "lint": "npx eslint ./ -f table --ext .js",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,hbs"
   },
   "keywords": [
     "weatherApp"
