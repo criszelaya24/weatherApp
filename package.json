@@ -16,7 +16,8 @@
     "axios": "^0.19.2",
     "eslint": "^7.5.0",
     "express": "^4.17.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "hbs": "^4.0.1"
   },
   "devDependencies": {
     "eslint-config-strongloop": "^2.1.0",
