@@ -4,6 +4,8 @@ const express = require('express'),
     hbs = require('hbs'),
     path = require('path');
 
+const port = process.env.PORT || 3000;
+
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -18,7 +20,6 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
 // Static views
-
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'WeatherApp',
@@ -59,6 +60,6 @@ app.all('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('App listening on port 3000!');
+app.listen(port, () => {
+    console.log(`App listening on port ${port}!`);
 });
