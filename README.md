@@ -102,7 +102,7 @@ npm install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once you have installed all the dependencies, run `npm start` and go to your browser and search: `localhost:3000`
+Once you have installed all the dependencies, run `npm run dev` and go to your browser and search: `localhost:3000`
 
 <!-- CONTACT -->
 ## Contact
